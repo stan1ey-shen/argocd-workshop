@@ -24,6 +24,13 @@ spec:
               path: /spec/template/spec/containers/0/args/0
               value: -text="Hello Gorilla, this is Argo CD Workshop s4b."
         - target:
+            kind: Service
+            name: http-echo-svc
+          patch: |-
+            - op: replace
+              path: /spec/selector/app
+              value: s4b-application-http-echo
+        - target:
             kind: Ingress
             name: http-echo
           patch: |-
