@@ -14,7 +14,7 @@ spec:
           - path: s5-application/app/*
   template:
     metadata:
-      name: "s5-{{index .path.segments 2}}"
+      name: "s5-application-{{index .path.segments 2}}"
       labels:
         app: infra
     spec:
