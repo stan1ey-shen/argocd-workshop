@@ -1,7 +1,7 @@
 podinfo:
   ui:
     message: "ArgoCD Workshop Sample 3"
-    color: "#FF0000"
+    color: "#003300"
   ingress:
     enabled: true
     className: nginx
