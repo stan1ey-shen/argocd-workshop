@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: s3-0-application
+  name: s3b-application
   namespace: infra-argocd
 spec:
   # The project the application belongs to.
@@ -13,6 +13,17 @@ spec:
     targetRevision: HEAD
     # This has no meaning for Helm charts pulled directly from a Helm repo instead of git.
     path: s3-application/podinfo
+    helm:
+      valuesObject:
+        podinfo:
+          ui:
+            message: "ArgoCD Workshop Sample 3b"
+          ingress:
+            hosts:
+              - host: "argocd-workshop-s3b.192.168.4.154.sslip.io"
+                paths:
+                  - path: "/"
+                    pathType: "Prefix"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: gorilla

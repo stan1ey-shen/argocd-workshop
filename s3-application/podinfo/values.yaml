@@ -1,12 +1,12 @@
 podinfo:
   ui:
-    message: "ArgoCD Workshop Sample 3-0"
+    message: "ArgoCD Workshop Sample 3a"
     color: "#003300"
   ingress:
     enabled: true
     className: nginx
     hosts:
-      - host: "argocd-workshop-s3-0.192.168.4.154.sslip.io"
+      - host: "argocd-workshop-s3a.192.168.4.154.sslip.io"
         paths:
           - path: "/"
             pathType: "Prefix"
