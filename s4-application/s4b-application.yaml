@@ -23,6 +23,13 @@ spec:
             - op: replace
               path: /spec/template/spec/containers/0/args/0
               value: -text="Hello Gorilla, this is Argo CD Workshop s4b."
+        - target:
+            kind: Ingress
+            name: http-echo
+          patch: |-
+            - op: replace
+              path: /spec/rules/0/host
+              value: argocd-workshop-s4b.192.168.4.154.sslip.io
   destination:
     server: "https://kubernetes.default.svc"
     namespace: gorilla
