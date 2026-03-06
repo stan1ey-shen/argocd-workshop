@@ -11,7 +11,7 @@ spec:
         paths:
           - backend:
               service:
-                name: s4a-application-http-echo-svc
+                name: s4-application-http-echo-svc
                 port:
                   number: 80
             path: /
