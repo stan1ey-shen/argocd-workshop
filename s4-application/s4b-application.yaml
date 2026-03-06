@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: s4a-application
+  name: s4b-application
   namespace: infra-argocd
 spec:
   # The project the application belongs to.
