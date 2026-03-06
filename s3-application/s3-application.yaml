@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     # Can point to either a Helm chart repo or a git repo.
-    repoURL: git@github.com:stan1ey-shen/argocd-workshop.git
+    repoURL: https://github.com/stan1ey-shen/argocd-workshop.git
     # For Helm, this refers to the chart version.
     targetRevision: HEAD
     # This has no meaning for Helm charts pulled directly from a Helm repo instead of git.
