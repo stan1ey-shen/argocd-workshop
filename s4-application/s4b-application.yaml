@@ -30,6 +30,9 @@ spec:
             - op: replace
               path: /spec/rules/0/host
               value: argocd-workshop-s4b.192.168.4.154.sslip.io
+            - op: replace
+              path: /spec/rules/0/http/paths/0/backend/service/name
+              value: s4b-application-http-echo-svc
   destination:
     server: "https://kubernetes.default.svc"
     namespace: gorilla
