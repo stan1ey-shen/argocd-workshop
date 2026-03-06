@@ -18,5 +18,5 @@ spec:
           name: http-echo
           ports:
             - containerPort: 80
-          command:
+          args:
             - '-text="hello world"'

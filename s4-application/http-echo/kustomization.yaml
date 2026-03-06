@@ -14,5 +14,5 @@ patches:
       name: http-echo
     patch: |-
       - op: replace
-        path: /spec/template/spec/containers/0/command/0
+        path: /spec/template/spec/containers/0/args/0
         value: -text="Hello Gorilla, this is Argo CD Workshop S4."
