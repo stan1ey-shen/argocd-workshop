@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: gorilla
+namePrefix: s4-application-
+
+resources:
+  - deployment.yaml
+  - svc.yaml
+  - ingress.yaml
+
+patches:
+  - target:
+      kind: Deployment
+      name: http-echo
+    patch: |-
+      - op: replace
+        path: /spec/template/spec/containers/0/command/0
+        value: -text="Hello Gorilla, this is Argo CD Workshop S4."
