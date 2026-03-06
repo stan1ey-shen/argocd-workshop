@@ -1,0 +1,11 @@
+podinfo:
+  ui:
+    message: "ArgoCD Workshop Sample 3"
+  ingress:
+    enabled: true
+    className: nginx
+    hosts:
+      - host: "argocd-workshop-s3.192.168.4.154.sslip.io"
+        paths:
+          - path: "/"
+            pathType: "Prefix"
