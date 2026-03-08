@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-echo
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: s3-application-http-echo
+  template:
+    metadata:
+      labels:
+        app: s3-application-http-echo
+    spec:
+      containers:
+        - image: hashicorp/http-echo:1.0.0
+          name: http-echo
+          ports:
+            - containerPort: 80
+          args:
+            - '-text="hello world"'

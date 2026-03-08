@@ -1,0 +1,10 @@
+podinfo:
+  ui:
+    message: "ArgoCD Workshop Sample 2 - prod"
+    color: "#000000"
+  ingress:
+    hosts:
+      - host: "argocd-workshop-s2c"
+        paths:
+          - path: "/"
+            pathType: "Prefix"
