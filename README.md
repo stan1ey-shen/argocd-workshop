@@ -404,7 +404,7 @@ spec:
     path: s4-application/s4a-appsets
 ```
 
-![ bg fit ](docs/images/app-of-apps.png)
+![ bg contain ](docs/images/app-of-apps.png)
 
 ---
 
