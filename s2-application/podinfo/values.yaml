@@ -1,5 +1,5 @@
 podinfo:
-  replicaCount: 9
+  replicaCount: 2
   ui:
     message: "ArgoCD Workshop Sample 2a"
     color: "#000088"
