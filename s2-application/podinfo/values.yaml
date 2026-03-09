@@ -2,7 +2,7 @@ podinfo:
   replicaCount: 2
   ui:
     message: "ArgoCD Workshop Sample 2a"
-    color: "#880000"
+    color: "#008800"
   ingress:
     enabled: true
     className: nginx
