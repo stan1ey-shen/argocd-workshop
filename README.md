@@ -52,15 +52,27 @@ style: |
 - kubectl
 - Helm
 
+---
+
+### System Requirements
+
 > For easier access during testing, map the domain names to the workshop node IP using the local hosts file:
 > {WORKSHOP_NOD_IP} argocd-workshop
+> 
 > {WORKSHOP_NOD_IP} argocd-workshop-s1b
+> 
 > {WORKSHOP_NOD_IP} argocd-workshop-s1c
+> 
 > {WORKSHOP_NOD_IP} argocd-workshop-s2a
+> 
 > {WORKSHOP_NOD_IP} argocd-workshop-s2b
+> 
 > {WORKSHOP_NOD_IP} argocd-workshop-s2c
+> 
 > {WORKSHOP_NOD_IP} argocd-workshop-s3
+> 
 > {WORKSHOP_NOD_IP} argocd-workshop-s4b
+> 
 > {WORKSHOP_NOD_IP} argocd-workshop-s4c
 ---
 
@@ -141,38 +153,6 @@ Open: `http://192.168.4.154:9898/`
 
 ---
 
-### ArgoCD Application - Sample 1 - Continuous Reconciliation
-
-Try scaling the deployment manually:
-
-```bash
-$ kubectl scale --replicas=9 deployment/s1a-application-podinfo -n gorilla
-```
-
-Check events:
-
-```bash
-$ kubectl events deployment/s1-application-podinfo -n gorilla
-2s Normal ScalingReplicaSet Deployment/s1a-application-podinfo Scaled up replica set s1a-application-podinfo-5757d999b9 from 1 to 9
-2s Normal ScalingReplicaSet Deployment/s1a-application-podinfo Scaled down replica set s1a-application-podinfo-5757d999b9 from 9 to 1
-```
-
-You can also delete the deployment:
-
-```bash
-$ kubectl delete deployment/s1a-application-podinfo -n gorilla
-```
-
-ArgoCD will recreate it automatically:
-```bash
-deployment.apps "s1a-application-podinfo" deleted
-$ kubectl get deployment/s1a-application-podinfo -n gorilla
-NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
-s1a-application-podinfo   1/1     1            1           5s
-```
-
----
-
 ### ArgoCD Application - Sample 1 - Deploy with Helm Values
 
 Apply a Helm chart with custom values:
@@ -186,7 +166,7 @@ Open: `http://argocd-workshop-s1c`
 <table>
   <tr>
     <th>s1b-application.yaml</th>
-    <th>s1b-application.yaml</th>
+    <th>s1c-application.yaml</th>
   </tr>
   <tr>
     <td>
@@ -221,6 +201,38 @@ spec:
     </td>
   </tr>
 </table>
+
+---
+
+### ArgoCD Application - Sample 1 - Continuous Reconciliation
+
+Try scaling the deployment manually:
+
+```bash
+$ kubectl scale --replicas=9 deployment/s1c-application-podinfo -n gorilla
+```
+
+Check events:
+
+```bash
+$ kubectl events deployment/s1-application-podinfo -n gorilla
+2s Normal ScalingReplicaSet Deployment/s1a-application-podinfo Scaled up replica set s1a-application-podinfo-5757d999b9 from 1 to 9
+2s Normal ScalingReplicaSet Deployment/s1a-application-podinfo Scaled down replica set s1a-application-podinfo-5757d999b9 from 9 to 1
+```
+
+You can also delete the deployment:
+
+```bash
+$ kubectl delete deployment/s1c-application-podinfo -n gorilla
+deployment.apps "s1c-application-podinfo" deleted
+```
+
+ArgoCD will recreate it automatically:
+```bash
+$ kubectl get deployment/s1c-application-podinfo -n gorilla
+NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
+s1a-application-podinfo   1/1     1            1           5s
+```
 
 ---
 

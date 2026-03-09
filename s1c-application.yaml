@@ -17,6 +17,7 @@ spec:
       releaseName: s1c-application
       # Values file as block file. This takes precedence over values
       valuesObject:
+        replicaCount: 1
         ui:
           message: "ArgoCD Workshop Sample 1c"
         ingress:
