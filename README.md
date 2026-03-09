@@ -677,10 +677,21 @@ spec:
 apiVersion: v1
 kind: Secret
 metadata:
+  name: private-helm-repo
+  namespace: argocd
   labels:
     argocd.argoproj.io/secret-type: repository
-...
+stringData:
+  url: https://my-private-chart-repo.internal
+  name: private-repo
+  type: helm
+  password: my-password
+  username: my-username
 ```
+
+---
+
+### ArgoCD Declarative GitOps CD for Kubernetes
 
 ```yaml
 apiVersion: v1
@@ -689,6 +700,18 @@ metadata:
   name: mycluster-secret
   labels:
     argocd.argoproj.io/secret-type: cluster
+type: Opaque
+stringData:
+  name: mycluster.example.com
+  server: https://mycluster.example.com
+  config: |
+    {
+      "bearerToken": "<authentication token>",
+      "tlsClientConfig": {
+        "insecure": false,
+        "caData": "<base64 encoded certificate>"
+      }
+    }
 ```
 
 ---
