@@ -42,7 +42,7 @@ style: |
 
 ### ArgoCD Architecture
 
-![ fit ](docs/images/arch.png)
+![ height:600px ](docs/images/arch.png)
 
 ---
 
