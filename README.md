@@ -315,7 +315,6 @@ spec:
     repoURL: https://github.com/stan1ey-shen/...
     path: s2-application/podinfo
     helm:
-      repoURL: https://github.com/stan1ey-shen/...
       # The path is relative to the spec.source.path
       # directory defined above
       valueFiles:
